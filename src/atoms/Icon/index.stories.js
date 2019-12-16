@@ -19,6 +19,7 @@ const url = 'https://api.github.com/repos/sschoger/heroicons-ui/contents/svg'
 stories.add('Catalog', () => {
   const size = select('Size', ['small', 'medium', 'large'], 'large')
   const [icons, setIcons] = useState([])
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     async function fetchData() {
@@ -34,16 +35,23 @@ stories.add('Catalog', () => {
     fetchData()
   }, [])
 
+  const filtered = icons.filter((icon) => (!search || icon.name.match(search)))
+
   return (
-    <Center>
-      {icons.map((icon) => (
-        <Icon
-          key={icon.name}
-          src={icon.download_url.replace(/raw.githubusercontent.com/, 'cdn.rawgit.com')}
-          title={icon.name.replace(/.svg$/, '')}
-          size={size}
-        />
-      ))}
-    </Center>
+    <>
+      <Center>
+        <label><b>Search:</b> <input onChange={(e) => setSearch(e.target.value)} /></label>
+      </Center>
+      <Center>
+        {filtered.map((icon) => (
+          <Icon
+            key={icon.name}
+            src={icon.download_url.replace(/raw.githubusercontent.com/, 'cdn.rawgit.com')}
+            title={icon.name.replace(/.svg$/, '')}
+            size={size}
+          />
+        ))}
+      </Center>
+    </>
   )
 })
