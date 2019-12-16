@@ -32,14 +32,14 @@ stories.add('Catalog', () => {
     }
 
     fetchData()
-  }, [icons, setIcons])
+  }, [])
 
   return (
     <Center>
       {icons.map((icon) => (
         <Icon
           key={icon.name}
-          src={icon.download_url}
+          src={icon.download_url.replace(/raw.githubusercontent.com/, 'cdn.rawgit.com')}
           title={icon.name.replace(/.svg$/, '')}
           size={size}
         />
