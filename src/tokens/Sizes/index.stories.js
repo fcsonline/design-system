@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Center from '../storybook/Center';
-import UnderConstruction from '../storybook/UnderConstruction';
+import Center from '../../storybook/Center';
+import UnderConstruction from '../../storybook/UnderConstruction';
 
 export default {
   title: 'Sizes',

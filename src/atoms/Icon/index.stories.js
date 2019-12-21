@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from "@storybook/addon-knobs";
 
 import Center from '../../storybook/Center';
+import Content from '../../storybook/Content';
 
 import Icon from '.';
 
@@ -43,14 +44,16 @@ stories.add('Catalog', () => {
         <label><b>Search:</b> <input onChange={(e) => setSearch(e.target.value)} /></label>
       </Center>
       <Center>
-        {filtered.map((icon) => (
-          <Icon
-            key={icon.name}
-            src={icon.download_url.replace(/raw.githubusercontent.com/, 'cdn.rawgit.com')}
-            title={icon.name.replace(/.svg$/, '')}
-            size={size}
-          />
-        ))}
+        <Content>
+          {filtered.map((icon) => (
+            <Icon
+              key={icon.name}
+              src={icon.download_url.replace(/raw.githubusercontent.com/, 'cdn.rawgit.com')}
+              title={icon.name.replace(/.svg$/, '')}
+              size={size}
+            />
+          ))}
+        </Content>
       </Center>
     </>
   )

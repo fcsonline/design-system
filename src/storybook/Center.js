@@ -2,8 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const styles = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   textAlign: 'center',
-  maxWidth: '400px',
+  minWidth: '400px',
+  maxWidth: '600px',
   margin: 'auto',
   padding: '40px'
 }
