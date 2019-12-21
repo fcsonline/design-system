@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const styles = {
   display: 'flex',
+  flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
   textAlign: 'center',

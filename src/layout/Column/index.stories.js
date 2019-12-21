@@ -2,6 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from "@storybook/addon-knobs";
 
+import { spaces } from '../../tokens/Spaces'
+
 import Center from '../../storybook/Center';
 import Block from '../../storybook/Block';
 
@@ -21,7 +23,10 @@ stories.add('Column', () => {
 
   return (
     <Center>
-      <Column size={select('Anchor', anchors, 'center')} >
+      <Column
+        anchor={select('Anchor', anchors, 'center')}
+        space={select('Space', Object.keys(spaces), 'medium')}
+      >
         {colors.map((color) => (
           <Block
             key={color}

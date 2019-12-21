@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components'
 
-const styles = {
-  display: 'flex',
-  flexDirection: 'column'
-}
+import { spaces } from '../../tokens/Spaces'
 
 const anchors = {
   left: 'flex-start',
@@ -12,20 +10,37 @@ const anchors = {
   center: 'center'
 }
 
-export default function Column ({ children, anchor = 'center' }) {
-  const columnStyles = {
-    ...styles,
-    alignItems: anchors[anchor]
-  }
+const StyledColumn = styled.div`
+  display: flex;
+  flex-direction: column;
 
+  ${props => props.anchor && css`
+    alignItems: ${anchors[props.anchor]};
+  `}
+
+
+  ${props => props.space && css`
+    > * {
+      margin-bottom: ${spaces[props.space]}px;
+    }
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+  `}
+
+`
+
+export default function Column ({ children, space = 'medium', anchor = 'center' }) {
   return (
-    <div style={columnStyles}>
+    <StyledColumn space={space} anchor={anchor}>
       {children}
-    </div>
+    </StyledColumn>
   )
 }
 
 Column.propTypes = {
   children: PropTypes.node.isRequired,
+  space: PropTypes.string,
   anchor: PropTypes.string,
 }

@@ -1,29 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components'
 
-const styles = {
-  display: 'inline-flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  userSelect: 'none',
-  color: 'white',
-  width: '100px',
-  height: '100px'
-}
+const StyledBlock = styled.div`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  color: white;
+  width: 100px;
+  height: 100px;
+
+  ${props => props.color && css`
+    background-color: ${props.color};
+    cursor: ${props.onClick ? 'pointer' : 'default'};
+  `}
+`
 
 export default function Block ({ color, title, onClick }) {
-  const blockStyles = {
-    ...styles,
-    backgroundColor: color,
-    cursor: onClick ? 'pointer' : 'default'
-  }
-
   const extraProps = onClick ? { role: 'button' } : {}
 
   return (
-    <div style={blockStyles} title={title} onClick={onClick} {...extraProps}>
+    <StyledBlock color={color} title={title} onClick={onClick} {...extraProps}>
       {title}
-    </div>
+    </StyledBlock>
   )
 }
 

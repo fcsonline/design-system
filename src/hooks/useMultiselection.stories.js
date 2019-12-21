@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
+import Row from '../layout/Row';
+
 import Center from '../storybook/Center';
 import Block from '../storybook/Block';
 
@@ -21,7 +23,7 @@ function useMultiselection(init) {
         item
       ])
     } else {
-      const removed  =[...selected.slice(0, index), ...selected.slice(index + 1)]
+      const removed = [...selected.slice(0, index), ...selected.slice(index + 1)]
 
       setState(removed)
     }
@@ -38,14 +40,16 @@ stories.add('Choose', () => {
 
   return (
     <Center>
-      {colors.map((color) => (
-        <Block
-          key={color}
-          title={selected.includes(color) ? color.toUpperCase() : color}
-          color={color}
-          onClick={() => onToggle(color)}
-        />
-      ))}
+      <Row>
+        {colors.map((color) => (
+          <Block
+            key={color}
+            title={selected.includes(color) ? color.toUpperCase() : color}
+            color={color}
+            onClick={() => onToggle(color)}
+          />
+        ))}
+      </Row>
 
       <p>
         Selected:

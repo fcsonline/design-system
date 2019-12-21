@@ -1,31 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components'
 
-const styles = {
-  display: 'flex',
-  flexDirection: 'row',
-}
+import { spaces } from '../../tokens/Spaces'
 
 const anchors = {
-  top: 'flex-start',
-  bottom: 'flex-end',
+  left: 'flex-start',
+  right: 'flex-end',
   center: 'center'
 }
 
-export default function Row ({ children, anchor }) {
-  const rowStyles = {
-    ...styles,
-    alignItems: anchors[anchor]
-  }
+const StyledRow = styled.div`
+  display: flex;
+  flex-direction: row;
 
+  ${props => props.anchor && css`
+    alignItems: ${anchors[props.anchor]};
+  `}
+
+
+  ${props => props.space && css`
+    > * {
+      margin-right: ${spaces[props.space]}px;
+    }
+
+    *:last-child {
+      margin-right: 0;
+    }
+  `}
+
+`
+
+export default function Row ({ children, space = 'medium', anchor = 'center' }) {
   return (
-    <div style={rowStyles}>
+    <StyledRow space={space} anchor={anchor}>
       {children}
-    </div>
+    </StyledRow>
   )
 }
 
 Row.propTypes = {
   children: PropTypes.node.isRequired,
+  space: PropTypes.string,
   anchor: PropTypes.string,
 }
