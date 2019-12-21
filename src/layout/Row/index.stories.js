@@ -3,11 +3,12 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from "@storybook/addon-knobs";
 
 import { spaces } from '../../tokens/Spaces'
+import { sizes } from '../../tokens/Sizes'
 
 import Center from '../../storybook/Center';
 import Block from '../../storybook/Block';
 
-import Row from '.';
+import Row, { anchors } from '.';
 
 export default {
   title: 'Row'
@@ -19,19 +20,20 @@ stories.addDecorator(withKnobs)
 
 stories.add('Row', () => {
   const colors = ['red', 'magenta', 'green', 'blue']
-  const anchors = ['top', 'center', 'bottom']
+  const sizeKeys = Object.keys(sizes)
 
   return (
     <Center>
       <Row
-        anchor={select('Anchor', anchors, 'center')}
+        anchor={select('Anchor', Object.keys(anchors), 'center')}
         space={select('Space', Object.keys(spaces), 'medium')}
       >
-        {colors.map((color) => (
+        {colors.map((color, i) => (
           <Block
             key={color}
             title={color}
             color={color}
+            size={sizeKeys[i % sizeKeys.length]}
           />
         ))}
       </Row>

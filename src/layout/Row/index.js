@@ -4,9 +4,9 @@ import styled, { css } from 'styled-components'
 
 import { spaces } from '../../tokens/Spaces'
 
-const anchors = {
-  left: 'flex-start',
-  right: 'flex-end',
+export const anchors = {
+  top: 'flex-start',
+  bottom: 'flex-end',
   center: 'center'
 }
 
@@ -15,7 +15,7 @@ const StyledRow = styled.div`
   flex-direction: row;
 
   ${props => props.anchor && css`
-    alignItems: ${anchors[props.anchor]};
+    align-items: ${anchors[props.anchor]};
   `}
 
 
