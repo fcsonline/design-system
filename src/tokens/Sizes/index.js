@@ -1,5 +1,7 @@
 export const sizes = {
-  small: 50,
-  medium: 100,
-  large: 200
+  xsmall: 16,
+  small: 32,
+  medium: 64,
+  large: 128,
+  xlarge: 256,
 }

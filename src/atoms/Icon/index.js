@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { sizes } from '../../tokens/Sizes'
+
 const styles = {
   borderRadius: '10px',
-}
-
-const sizes = {
-  small: 16,
-  medium: 32,
-  large: 64,
 }
 
 export default function Icon ({ src, title, size }) {

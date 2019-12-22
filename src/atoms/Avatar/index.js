@@ -5,11 +5,7 @@ const styles = {
   borderRadius: '10px',
 }
 
-const sizes = {
-  small: 16,
-  medium: 32,
-  large: 64,
-}
+import { sizes } from '../../tokens/Sizes'
 
 export default function Avatar ({ src, title, size }) {
   const width = sizes[size]

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from "@storybook/addon-knobs";
 
+import { sizes } from '../../tokens/Sizes'
+
 import Center from '../../storybook/Center';
 import Content from '../../storybook/Content';
 
@@ -18,7 +20,7 @@ stories.addDecorator(withKnobs)
 const url = 'https://api.github.com/repos/sschoger/heroicons-ui/contents/svg'
 
 stories.add('Catalog', () => {
-  const size = select('Size', ['small', 'medium', 'large'], 'large')
+  const size = select('Size', Object.keys(sizes), 'small')
   const [icons, setIcons] = useState([])
   const [search, setSearch] = useState('')
 
