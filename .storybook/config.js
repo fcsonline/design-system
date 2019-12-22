@@ -1,13 +1,13 @@
-import { configure } from '@storybook/react';
-import { addParameters } from '@storybook/react';
-import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { configure } from '@storybook/react'
+import { addParameters } from '@storybook/react'
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks'
 
 // automatically import all files ending in *.stories.js
-configure(require.context('../src', true, /\.stories\.(js|mdx)$/), module);
+configure(require.context('../src', true, /\.stories\.(js|mdx)$/), module)
 
 addParameters({
   docs: {
     container: DocsContainer,
-    page: DocsPage,
-  },
-});
+    page: DocsPage
+  }
+})

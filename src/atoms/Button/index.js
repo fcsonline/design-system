@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const styles = {
   fontSize: '14px',
@@ -12,20 +12,14 @@ const styles = {
   color: 'white',
   borderRadius: '5px',
   outline: 'none',
-  cursor: 'pointer',
+  cursor: 'pointer'
 }
 
 export default function Button ({ label }) {
-  return (
-    <button
-      style={styles}
-    >
-      {label}
-    </button>
-  )
+  return <button style={styles}>{label}</button>
 }
 
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired
 }

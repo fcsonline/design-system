@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react'
+import { storiesOf } from '@storybook/react'
 
-import Center from '../storybook/Center';
-import Block from '../storybook/Block';
+import Center from '../storybook/Center'
+import Block from '../storybook/Block'
 
 export default {
-  title: 'useState',
+  title: 'useState'
 }
 
 const stories = storiesOf('Hooks | useState', module)
@@ -17,7 +17,7 @@ stories.add('Counter', () => {
     <Center>
       <Block
         title={count}
-        color={'magenta'}
+        color='magenta'
         onClick={() => setState(count + 1)}
       />
     </Center>
@@ -31,7 +31,7 @@ stories.add('Toggle', () => {
     <Center>
       <Block
         title={String(value)}
-        color={'#333'}
+        color='#333'
         onClick={() => setState(!value)}
       />
     </Center>
@@ -43,10 +43,7 @@ stories.add('Field', () => {
 
   return (
     <Center>
-      <input
-        value={value}
-        onChange={(e) => setState(e.target.value)}
-      />
+      <input value={value} onChange={e => setState(e.target.value)} />
     </Center>
   )
 })

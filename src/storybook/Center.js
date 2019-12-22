@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const styles = {
   display: 'flex',
@@ -14,13 +14,9 @@ const styles = {
 }
 
 export default function Center ({ children }) {
-  return (
-    <div style={styles}>
-      {children}
-    </div>
-  )
+  return <div style={styles}>{children}</div>
 }
 
 Center.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }

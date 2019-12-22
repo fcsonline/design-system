@@ -17,5 +17,5 @@ export const lineHeights = {
 export const fontWeights = {
   lighter: 300,
   normal: 'normal',
-  bolder: 600,
+  bolder: 600
 }

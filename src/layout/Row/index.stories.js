@@ -1,14 +1,14 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from "@storybook/addon-knobs";
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import { withKnobs, select } from '@storybook/addon-knobs'
 
 import { spaces } from '../../tokens/Spaces'
 import { sizes } from '../../tokens/Sizes'
 
-import Center from '../../storybook/Center';
-import Block from '../../storybook/Block';
+import Center from '../../storybook/Center'
+import Block from '../../storybook/Block'
 
-import Row, { anchors } from '.';
+import Row, { anchors } from '.'
 
 export default {
   title: 'Row'

@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from "@storybook/addon-knobs";
+import React, { useState, useEffect } from 'react'
+import { storiesOf } from '@storybook/react'
+import { withKnobs, select } from '@storybook/addon-knobs'
 
 import { sizes } from '../../tokens/Sizes'
 
-import Center from '../../storybook/Center';
-import Content from '../../storybook/Content';
+import Center from '../../storybook/Center'
+import Content from '../../storybook/Content'
 
-import Icon from '.';
+import Icon from '.'
 
 export default {
   title: 'Icon'
@@ -25,11 +25,11 @@ stories.add('Catalog', () => {
   const [search, setSearch] = useState('')
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchData () {
       const response = await fetch(url)
 
-      if(response.ok) {
-        const json = await response.json();
+      if (response.ok) {
+        const json = await response.json()
 
         setIcons(json)
       }
@@ -38,19 +38,24 @@ stories.add('Catalog', () => {
     fetchData()
   }, [])
 
-  const filtered = icons.filter((icon) => (!search || icon.name.match(search)))
+  const filtered = icons.filter(icon => !search || icon.name.match(search))
 
   return (
     <>
       <Center>
-        <label><b>Search:</b> <input onChange={(e) => setSearch(e.target.value)} /></label>
+        <label>
+          <b>Search:</b> <input onChange={e => setSearch(e.target.value)} />
+        </label>
       </Center>
       <Center>
         <Content>
-          {filtered.map((icon) => (
+          {filtered.map(icon => (
             <Icon
               key={icon.name}
-              src={icon.download_url.replace(/raw.githubusercontent.com/, 'cdn.rawgit.com')}
+              src={icon.download_url.replace(
+                /raw.githubusercontent.com/,
+                'cdn.rawgit.com'
+              )}
               title={icon.name.replace(/.svg$/, '')}
               size={size}
             />

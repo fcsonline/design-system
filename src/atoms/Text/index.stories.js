@@ -1,13 +1,13 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select, text } from "@storybook/addon-knobs";
-import { withA11y } from '@storybook/addon-a11y';
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import { withKnobs, select, text } from '@storybook/addon-knobs'
+import { withA11y } from '@storybook/addon-a11y'
 
 import { fontSizes, fontWeights } from '../../tokens/Typography'
 
-import Center from '../../storybook/Center';
+import Center from '../../storybook/Center'
 
-import Text from './';
+import Text from './'
 
 export default {
   title: 'Text'

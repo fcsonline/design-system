@@ -3,7 +3,7 @@
 // For core componets: Snapshot Testing
 //
 
-function sum(a, b) {
+function sum (a, b) {
   return a + b
 }
 

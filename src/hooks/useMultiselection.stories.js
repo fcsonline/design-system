@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react'
+import { storiesOf } from '@storybook/react'
 
-import Row from '../layout/Row';
+import Row from '../layout/Row'
 
-import Center from '../storybook/Center';
-import Block from '../storybook/Block';
+import Center from '../storybook/Center'
+import Block from '../storybook/Block'
 
 export default {
-  title: 'useMultiselection',
+  title: 'useMultiselection'
 }
 
-function useMultiselection(init) {
+function useMultiselection (init) {
   const [selected, setState] = useState(init)
 
-  const onToggle = (item) => {
+  const onToggle = item => {
     // TODO xor/lodash
     const index = selected.indexOf(item)
 
     if (index < 0) {
-      setState([
-        ...selected,
-        item
-      ])
+      setState([...selected, item])
     } else {
-      const removed = [...selected.slice(0, index), ...selected.slice(index + 1)]
+      const removed = [
+        ...selected.slice(0, index),
+        ...selected.slice(index + 1)
+      ]
 
       setState(removed)
     }
@@ -41,7 +41,7 @@ stories.add('Choose', () => {
   return (
     <Center>
       <Row>
-        {colors.map((color) => (
+        {colors.map(color => (
           <Block
             key={color}
             title={selected.includes(color) ? color.toUpperCase() : color}
@@ -53,9 +53,7 @@ stories.add('Choose', () => {
 
       <p>
         Selected:
-        <b>
-          {selected.join(' ')}
-        </b>
+        <b>{selected.join(' ')}</b>
       </p>
     </Center>
   )

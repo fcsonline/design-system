@@ -1,24 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 import { sizes } from '../../tokens/Sizes'
 
-const styles = {
-  borderRadius: '10px',
-}
+const StyledImage = styled.img`
+  border-radius: 10px;
+`
 
 export default function Icon ({ src, title, size }) {
   const width = sizes[size]
   const height = sizes[size]
 
   return (
-    <img
+    <StyledImage
       src={src}
       width={width}
       height={height}
       alt={title}
       title={title}
-      style={styles}
     />
   )
 }
@@ -26,5 +26,5 @@ export default function Icon ({ src, title, size }) {
 Icon.propTypes = {
   src: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  size: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired
 }
