@@ -8,7 +8,7 @@ const styles = {
   justifyContent: 'center',
   textAlign: 'center',
   minWidth: '400px',
-  maxWidth: '600px',
+  maxWidth: '800px',
   margin: 'auto',
   padding: '40px'
 }

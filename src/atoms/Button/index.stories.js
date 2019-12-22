@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text} from "@storybook/addon-knobs";
+import { withKnobs, text } from "@storybook/addon-knobs";
 import { withA11y } from '@storybook/addon-a11y';
 
 import Center from '../../storybook/Center';

@@ -16,7 +16,7 @@ export default function Spacer ({ space }) {
   }
 
   return (
-    <div style={spacerStyles}>
+    <div style={spacerStyles} title={space}>
       <svg width={value} height={value} x="50" y="50" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
         <text x="40" y="35" style={{ fill: "red" }}>{value}</text>
         <line x1="0" y1="50" x2="100" y2="50" style={{ stroke: "red", strokeWidth: 2}} />

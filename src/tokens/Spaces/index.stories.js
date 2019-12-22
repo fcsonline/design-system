@@ -1,6 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { spaces } from '.'
+
 import Spacer from '../../storybook/Spacer';
 import Center from '../../storybook/Center';
 
@@ -12,8 +14,8 @@ const stories = storiesOf('Tokens | Spaces', module)
 
 stories.add('Simple', () => (
   <Center>
-    <Spacer space='small' />
-    <Spacer space='medium' />
-    <Spacer space='large' />
+    {Object.entries(spaces).map((space) => (
+      <Spacer key={space[0]} space={space[0]} />
+    ))}
   </Center>
 ))
